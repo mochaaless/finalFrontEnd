@@ -30,8 +30,10 @@ export const handler: Handlers = {
 
 
 const Page = (props: PageProps<Data>) => {
+
+    const filteredCharacters = props.data.characters.filter(ch => props.data.favIds.includes(ch.id))
     return (
-        <CharacterList characters={props.data.characters} favIds={props.data.favIds}/>
+        <CharacterList characters={filteredCharacters} favIds={props.data.favIds}/>
     )
 }
 
